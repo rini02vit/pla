@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public final class Main {
+  public static void main(final String[] args) {
+    final Scanner scanner = new Scanner(System.in);
+
+    // Read the total number of problems
+    if (!scanner.hasNextInt()) {
+      return;
+    }
+    final int n = scanner.nextInt();
+    int solvedCount = 0;
+
+    // Process each problem
+    for (int i = 0; i < n; i++) {
+      final int petya = scanner.nextInt();
+      final int vasya = scanner.nextInt();
+      final int tonya = scanner.nextInt();
+
+      // Check if at least two friends are sure
+      if ((petya + vasya + tonya) >= 2) {
+        solvedCount++;
+      }
+    }
+
+    // Print the final result
+    System.out.println(solvedCount);
+    scanner.close();
+  }
+}
