@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read the number of friends and the fence height
+        int n = scanner.nextInt();
+        int h = scanner.nextInt();
+        
+        int totalWidth = 0;
+        
+        // Process each friend's height
+        for (int i = 0; i < n; i++) {
+            int a = scanner.nextInt();
+            
+            if (a > h) {
+                totalWidth += 2; // Person must bend down
+            } else {
+                totalWidth += 1; // Person walks normally
+            }
+        }
+        
+        // Print the final minimum road width
+        System.out.println(totalWidth);
+        
+        scanner.close();
+    }
+}
