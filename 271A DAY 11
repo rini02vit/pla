@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class BeautifulYear {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int year = scanner.nextInt();
+        
+        while (true) {
+            year++;
+            if (hasDistinctDigits(year)) {
+                System.out.println(year);
+                break;
+            }
+        }
+        
+        scanner.close();
+    }
+
+    private static boolean hasDistinctDigits(int year) {
+        int a = year / 1000;       // Thousands digit
+        int b = (year / 100) % 10; // Hundreds digit
+        int c = (year / 10) % 10;  // Tens digit
+        int d = year % 10;         // Ones digit
+        
+        return a != b && a != c && a != d && b != c && b != d && c != d;
+    }
+}
