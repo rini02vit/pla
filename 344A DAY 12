@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.nanoTime() > 0 ? System.in : null);
+        
+        if (!scanner.hasNextInt()) {
+            return;
+        }
+        
+        int n = scanner.nextInt();
+        if (n == 0) {
+            System.out.println(0);
+            return;
+        }
+        
+ 
+        String prev = scanner.next();
+        int groups = 1;
+        
+       
+        for (int i = 1; i < n; i++) {
+            String current = scanner.next();
+            if (!current.equals(prev)) {
+                groups++;
+                prev = current; 
+            }
+        }
+        
+        System.out.println(groups);
+        scanner.close();
+    }
+}
